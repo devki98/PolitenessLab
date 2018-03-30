@@ -32,9 +32,11 @@ if __name__ == "__main__":
                 colon = substr_comp.find(":")
                 comp_val = float(str[colon: len(str) ])
                 print(comp_val)
-                if (neg_val < -0.5):
+                if (comp_val < -0.05):
                     response = "maybe try sending something a little nicer!"
-                response = "ok"
+                if (comp_val > 0.05)
+                    response = "this is a positive statement
+                response = "this is a neutral statement"
                 slack_client.api_call(
                     "chat.postMessage",
                     channel=channel,
