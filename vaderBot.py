@@ -3,7 +3,7 @@ from slackclient import SlackClient
 from vaderSentiment import SentimentIntensityAnalyzer
 
 # replace this with your code.
-slack_client = SlackClient('xoxb-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+slack_client = SlackClient('xoxp-xxxxxxxxxxxxxxxxxx')
 starterbot_id = None
 
 RTM_READ_DELAY = 1
@@ -25,17 +25,16 @@ if __name__ == "__main__":
             if text != None:
                 vs = analyzer.polarity_scores(text)
                 str = "{:-<30} {}".format(text, str(vs))
-                comp_str = str.find("'compound':")
-                print(comp_str)
-                substr_comp = str[comp_str: ]
-                print(substr_comp)
-                colon = substr_comp.find(":")
-                comp_val = float(str[colon: len(str) ])
+                print (str)
+                comp_index= str.find ("'compound':")
+                comp_str = str[comp_index:]
+                colon = comp_str.find(":")
+                comp_val = float(comp_str[colon+1:len(comp_str)-1])
                 print(comp_val)
                 if (comp_val < -0.05):
                     response = "maybe try sending something a little nicer!"
-                if (comp_val > 0.05)
-                    response = "this is a positive statement
+                if (comp_val > 0.05):
+                    response = "this is a positive statement"
                 response = "this is a neutral statement"
                 slack_client.api_call(
                     "chat.postMessage",
