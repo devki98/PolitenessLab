@@ -3,7 +3,7 @@ from slackclient import SlackClient
 from vaderSentiment import SentimentIntensityAnalyzer
 
 # replace this with your code.
-slack_client = SlackClient('xoxb-331621841734-Lu3wNbbMzXqsymzAKBiiOQ4N')
+slack_client = SlackClient('xoxb-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 starterbot_id = None
 
 RTM_READ_DELAY = 1
